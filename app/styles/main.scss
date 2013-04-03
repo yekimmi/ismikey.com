@@ -1,1 +1,83 @@
 @import "compass_twitter_bootstrap";
+@import "prettify";
+
+body {
+}
+/*header*/
+.header a {
+  color: #aaaaaa;
+}
+.header a:hover {
+  color: #aaaaaa;
+}
+.header .brand {
+  margin-left:20px;
+}
+
+.navigation .navbar {
+  margin-bottom:0px;
+}
+.navigation .navbar-inner {
+  background-image: none;
+  background-color: #fbfbfb;
+}
+.navigation.navbar-fixed-top .navbar-inner{
+  padding-left:20px;
+  padding-right:20px;
+}
+.navigation .section-label {
+  font-size: 24px;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.navigation .section-label.active {
+  color:black;
+  border-bottom: 3px solid #adadad;
+}
+.navigation .section-label.brand {
+  color:#000000;
+}
+.navigation .section-label.inactive {
+  color:#dddddd;
+}
+
+#where .label {
+  font-size: 24px;
+  height: 60px;
+}
+
+#where .hero-unit {
+  height:260px;
+}
+
+/*code*/
+pre span.command {
+  color:#000000;
+}
+pre span.command:before {
+  content: '> ';
+}
+pre span.command:after {
+  content: ';';
+}
+pre span.output {
+  color: #aaaaaa;
+}
+
+/*misc*/
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.section.movedown{
+  margin-top:41px;
+}
+div.section:nth-child(4n) {
+  background-color:#fafafa;
+}
+.bottom-padding {
+}
