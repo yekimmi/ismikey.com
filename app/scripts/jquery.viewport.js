@@ -13,23 +13,23 @@
  */
 (function ($) {
   $.belowthefold = function (element, settings) {
-    var fold = $(window).height() + $(window).scrollTop();
-    return fold <= $(element).offset().top - settings.threshold;
+    var fold = $(window).outerHeight(true) + $(window).scrollTop();
+    return fold <= $(element).offset().top - settings.thresholdBottom;
   };
 
   $.abovethetop = function (element, settings) {
     var top = $(window).scrollTop();
-    return top >= $(element).offset().top + $(element).height() - settings.threshold;
+    return top >= $(element).offset().top + $(element).outerHeight(false) - settings.thresholdTop;
   };
 
   $.rightofscreen = function (element, settings) {
     var fold = $(window).width() + $(window).scrollLeft();
-    return fold <= $(element).offset().left - settings.threshold;
+    return fold <= $(element).offset().left - settings.thresholdRight;
   };
 
   $.leftofscreen = function (element, settings) {
     var left = $(window).scrollLeft();
-    return left >= $(element).offset().left + $(element).width() - settings.threshold;
+    return left >= $(element).offset().left + $(element).width() - settings.thresholdLeft;
   };
 
   $.inviewport = function (element, settings) {
@@ -38,19 +38,28 @@
 
   $.extend($.expr[':'], {
     'below-the-fold': function (a) {
-      return $.belowthefold(a, {threshold : 0});
+      var bottom = p[3] || 0;
+      return $.belowthefold(a, {thresholdBottom : bottom});
     },
     'above-the-top': function (a) {
-      return $.abovethetop(a, {threshold : 0});
+      var top = p[3] || 0;
+      return $.abovethetop(a, {thresholdTop : top});
     },
     'left-of-screen': function (a) {
-      return $.leftofscreen(a, {threshold : 0});
+      var left = p[3] || 0;
+      return $.leftofscreen(a, {thresholdLeft : left});
     },
     'right-of-screen': function (a) {
-      return $.rightofscreen(a, {threshold : 0});
+      var right = p[3] || 0;
+      return $.rightofscreen(a, {thresholdRight : right});
     },
-    'in-viewport': function (a) {
-      return $.inviewport(a, {threshold : 0});
+    'in-viewport': function (a, i, p) {
+      var m = p[3].split(',');
+      var left = m[0] || 0;
+      var right = m[1] || 0;
+      var top = m[2] || 0;
+      var bottom = m[3] || 0;
+      return $.inviewport(a, {thresholdLeft : left, thresholdRight : right, thresholdTop : top, thresholdBottom : bottom});
     }
   });
 })(jQuery);
