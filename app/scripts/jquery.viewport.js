@@ -37,19 +37,19 @@
   };
 
   $.extend($.expr[':'], {
-    'below-the-fold': function (a) {
+    'below-the-fold': function (a, i, p) {
       var bottom = p[3] || 0;
       return $.belowthefold(a, {thresholdBottom : bottom});
     },
-    'above-the-top': function (a) {
+    'above-the-top': function (a, i, p) {
       var top = p[3] || 0;
       return $.abovethetop(a, {thresholdTop : top});
     },
-    'left-of-screen': function (a) {
+    'left-of-screen': function (a, i, p) {
       var left = p[3] || 0;
       return $.leftofscreen(a, {thresholdLeft : left});
     },
-    'right-of-screen': function (a) {
+    'right-of-screen': function (a, i, p) {
       var right = p[3] || 0;
       return $.rightofscreen(a, {thresholdRight : right});
     },
