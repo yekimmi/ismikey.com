@@ -3,13 +3,11 @@
 angular.module('ismikey.comApp', [])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
+      .when('/:locationName', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        reloadOnSearch: false
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+      .otherwise({redirectTo : '/'});
     $locationProvider.hashPrefix('#');
     $locationProvider.html5Mode(true);
   }]);
