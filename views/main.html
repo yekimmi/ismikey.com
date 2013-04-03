@@ -1,0 +1,134 @@
+<div scroll-spy="">
+  <div class="navigation">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav pull-left">
+          <li>
+            <a class="navlink section-label nav-who" ng-href="/#who">who</a>
+          </li>
+          <li>
+            <a class="navlink section-label nav-what" ng-href="/#what">what</a>
+          </li>
+          <li>
+            <a class="navlink section-label nav-where" ng-href="/#where">where</a>
+          </li>
+          <li class="span2">&nbsp;</li>
+          <span class="brand section-label label-does">does</span>
+          <span class="brand section-label label-is">is</span>
+          <span class="brand section-label label-mikey">mikey</span>
+          <span class="brand section-label label-do">do</span>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a class="menu-anchor" name="who" id="who-anchor"></a>
+    <div class="section" id="who">
+      <div class="container">
+        <div class="row">
+          <div class="offset1 span10 content">
+<!-- this needs to be to the right because pretty print uses newlines and spaces -->
+<pre class="prettyprint linenums lang-js">
+describe('mikey', function(){
+  it( "graduated from", function(){
+    expect( mikey.education ).toEqual({
+      school : "MIT",
+      degree : "B.S. in Mathematics with CS"
+    });
+  });
+  it( "hacks on", function(){
+    expect( mikey.hacks ).toEqual(
+      ['web', 'js', 'android', 'java' , 'life']
+    );
+  });
+  it( "is interested in", function(){
+    expect( mikey.interests ).toContain("hacking");
+    expect( mikey.interests ).toContain("music");
+    expect( mikey.interests ).toContain("development opportunities");
+  });
+  it ("is available?", function(){
+    expect( availability(mikey.schedule) ).toEqual("<a class="navlink" ng-href="/#where">lets talk</a>");
+  });
+});
+</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="menu-anchor" name="what" id="what-anchor"></a>
+    <div class="section" id="what">
+      <div class="container">
+        <div class="row">
+          <code>
+            stuff
+          </code>
+        </div>
+      </div>
+    </div>
+    <a class="menu-anchor" name="where" id="where-anchor"></a>
+    <div class="section" id="where">
+      <div class="container">
+        <div class="row">
+          <div class="offset4 span3 content">
+            <ul class="thumbnails">
+              <li class="span3">
+                <img class="thumbnail" src="images/me-short.png">
+              </li>
+            </ul>
+          </div>
+          <div class="span5">
+            <ul class="thumbnails">
+
+
+              <li class="span2">
+                <p class="lead">
+                  contact me
+                
+              </p></li>
+              <li class="span3">
+                <p class="lead"><a ng-href="mailto:mikey@funzooka.com">mikey@funzooka.com</a></p>
+              </li>
+
+              <li class="span2">
+                <p class="lead">
+                  follow me 
+                
+              </p></li>
+              <li class="span1">
+                <a ng-href="https://plus.google.com/107182634998617749192" class="thumbnail">
+                  <img src="images/gplus.png">
+                </a>
+              </li>
+              <li class="span1">
+                <a ng-href="https://www.facebook.com/mahkay" class="thumbnail">
+                  <img src="images/f_logo.png">
+                </a>
+              </li>
+              <li class="span1">
+                <a ng-href="https://twitter.com/mikeyfujihara" class="thumbnail">
+                  <img src="images/twitter-bird-white-on-blue.png">
+                </a>
+              </li>
+
+              <li class="span2">
+                <p class="lead">
+                  hire me
+                
+              </p></li>
+              <li class="span1">
+                <a ng-href="https://github.com/mikeyfujihara" class="thumbnail">
+                  <img src="images/octocat.png" style="padding-top:5px;padding-bottom:5px">
+                </a>
+              </li>
+              <li class="span1">
+                <a ng-href="http://www.linkedin.com/in/mikeyfujihara" class="thumbnail">
+                  <img src="images/linkedin_logo.png" style="padding-top:5px;padding-bottom:5px">
+                </a>
+              </li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-padding"></div>
+</div>
